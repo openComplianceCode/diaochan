@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row-item-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.flex-start {
+  justify-content: flex-start;
+}
+.inline-item-center {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.page {
+  padding: 0 30px;
+}
+.card-scope {
+  flex: 1 1 50%;
+  padding: 20px;
+}
+.card {
+  background-color: #fff;
+  border-radius: 5px 5px 5px 0;
+  box-shadow: 1px 1px 15px 0 rgba(69, 65, 78, 0.08);
+  padding: 10px;
+  font-family: Arial;
+}
+.card-header {
+  padding: 1rem;
+  border-bottom: 1px solid #ebecec;
+  font-size: 18px;
+  color: #575962;
+}
+.card-body {
+  padding: 1rem;
+}
+.li-textarea {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%; /*这里设置宽度为100%，但是card又有内边距，从而实现textarea左右有间隙地居中*/
+}
+.license_text {
+  width: 100%;
+  height: 300px;
+}
+.license_text:focus {
+  outline: none;
+  border-color: #6767e7;
+}
+.text_input_count {
+  font-size: 2px;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  color: #2cba93;
+}
+.col-6 {
+  width: 50%;
+  /*flex-shrink: 0;*/
+}
+.withrightborder {
+  border-right-style: dotted;
+  border-right-width: 10px;
+  border-right-color: #6767e7;
+  margin: -10px; /* 这里要用负margin抵消border带来的宽度，否者会导致换行，当然也可以通过取消row的flex-wrap: wrap;实现 */
+}
+.hidden {
+  display: none;
+}
+.li-button {
+  padding: 0px 10px;
+}
+.li-button:enabled:hover {
+  opacity: 0.9;
+  transition: 0.3s;
+}
+.li-button:disabled {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.li-flex {
+  display: flex;
+}
+.i-remind {
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  text-align: center;
+  background-color: rgb(85 164 149);
+  margin: auto 0;
+}
+.page-title {
+  font-size: 16px;
+  font-weight: normal;
+}
+p {
+  margin: 1rem 0;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table thead th {
+  color: #554;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: solid 2px rgb(235, 237, 242);
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+table tbody td {
+  color: #554;
+  font-size: 13px;
+  font-weight: 400;
+  border-bottom: solid 1px rgb(235, 237, 242);
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+table {
+  margin: 0;
+  width: 100%;
+}
+th {
+  padding: 8px;
+  text-align: center;
+}
+td {
+  text-align: center;
+  padding: 8px;
+}
+.alert-success {
+  padding: 15px;
+  border-radius: 5px;
+  color: #0f5132;
+  background-color: #badbcc;
+  margin: 5px;
+}
+.alert-warning {
+  padding: 15px;
+  border-radius: 5px;
+  color: #664d03;
+  background-color: #fff3cd;
+  margin: 5px;
+}
+.success {
+  color: #0f5132;
+  background-color: #badbcc;
+}
+.warning {
+  color: #664d03;
+  background-color: #fff3cd;
+}
+.copy-icon {
+  color: gray;
+  cursor: pointer;
+  padding-left: 5px;
+  transition: all 0.3s;
+  user-select: none;
+}
+.copy-icon:active {
+  color: black;
+}
+.tooltip {
+  display: inline;
+  position: relative;
+}
+.tooltip .tooltip-text {
+  position: absolute;
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  top: 150%;
+  left: 50%; /*定位到中间偏右一点*/
+  transform: translate(-50%, 0); /*width的一半，左移到正中间*/
+  padding: 5px;
+  user-select: none;
+  white-space: nowrap;
+}
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%; /*定位到上方*/
+  left: 50%; /*定位到中间偏右一点*/
+  margin-left: -5px; /*左移到水平正中*/
+  border-width: 5px; /*边框宽度为5px,底边为10px长*/
+  border-style: solid;
+  border-color: transparent transparent black transparent; /*用border画三角形，分别是上右下左，因为要画向上的箭头所以第三个位置不是透明*/
+}
+.hover-tooltip {
+  display: inline;
+  position: relative;
+}
+.hover-tooltip .hover-tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  top: 150%;
+  left: 50%; /*定位到中间偏右一点*/
+  transform: translate(-50%, 0) scale(0, 0); /*width的一半，左移到正中间*/
+  padding: 5px;
+  transition: all 0.2s linear;
+  white-space: nowrap;
+  opacity: 0;
+  z-index: 2;
+}
+.hover-tooltip:hover .hover-tooltip-text {
+  visibility: visible;
+  transform: translate(-50%, 0) scale(1, 1);;
+  opacity: 1;
+}
+.hover-tooltip .hover-tooltip-text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%; /*定位到上方*/
+  left: 50%; /*定位到中间偏右一点*/
+  margin-left: -5px; /*左移到水平正中*/
+  border-width: 5px; /*边框宽度为5px,底边为10px长*/
+  border-style: solid;
+  border-color: transparent transparent black transparent; /*用border画三角形，分别是上右下左，因为要画向上的箭头所以第三个位置不是透明*/
+}
+.right-star {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.header a:link {
+  color: #45baf1;
+  font-weight: bold;
+  text-decoration: none;
+}
+.header a:visited {
+  color: #45baf1;
+  font-weight: bold;
+  text-decoration: none;
+}
